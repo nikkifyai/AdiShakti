@@ -1,0 +1,15 @@
+<resources>
+
+    <color name="purple_dark">#3E0E6B</color>
+    <color name="purple_mid">#5B1FA8</color>
+    <color name="purple_light">#7E57C2</color>
+
+    <color name="teal_primary">#00BFA5</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="soft_lavender">#EDE7F6</color>
+
+    <color name="primary">#5B1FA8</color>
+    <color name="textDark">#212121</color>
+
+</resources>

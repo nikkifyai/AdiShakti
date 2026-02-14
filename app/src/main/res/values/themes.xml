@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme for API-23+ -->
+    <style name="Base.Theme.AdiShakti" parent="Theme.Material3.DayNight.NoActionBar">
+        <!--
+            Customize your light theme here.
+            For example, you can set the primary color:
+            <item name="colorPrimary">@color/my_light_primary</item>
+        -->
+    </style>
+
+    <!-- The main theme for your application -->
+    <style name="Theme.AdiShakti" parent="Base.Theme.AdiShakti" />
+
+</resources>
