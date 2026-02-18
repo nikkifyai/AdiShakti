@@ -2,34 +2,117 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- ================= PERMISSIONS ================= -->
+
+    <!-- Internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Camera + Audio -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <!-- SMS -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <!-- Location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- Foreground Service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+
+    <!-- Notifications (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- ================= HARDWARE FEATURES ================= -->
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false"/>
+
+    <!-- ================= APPLICATION ================= -->
+
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdiShakti"
-        tools:targetApi="31">
+        tools:targetApi="34">
+
+        <!-- ================= SPLASH (Launcher) ================= -->
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true"> <!-- This is CRITICAL for targetSdk 31+ -->
-        </activity>
-        <activity
-            android:name=".ui.onboarding.OnboardingActivity"
+            android:name="com.ex.safe.adishakti.SplashActivity"
             android:exported="true">
-        </activity>
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true">
+
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
-        <activity android:name=".HomeActivity" android:exported="true"/>
-        <activity android:name=".SettingsActivity" android:exported="true"/>
+
+        <!-- ================= MAIN FLOW ================= -->
+
+        <activity
+            android:name="com.ex.safe.adishakti.MainActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name="com.ex.safe.adishakti.HomeActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name="com.ex.safe.adishakti.SettingsActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name="com.ex.safe.adishakti.EmergencyContactActivity"
+            android:exported="true"/>
+
+        <!-- ================= ONBOARDING ================= -->
+
+        <activity
+            android:name="com.ex.safe.adishakti.ui.onboarding.OnboardingActivity"
+            android:exported="true"/>
+
+        <!-- ================= ACCESSIBILITY SERVICE ================= -->
+
+        <service
+            android:name="com.ex.safe.adishakti.accessibility.VolumeAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config"/>
+        </service>
+
+        <!-- ================= CAMERA RECORDING FOREGROUND SERVICE ================= -->
+
+        <service
+            android:name="com.ex.safe.adishakti.service.CameraXRecordingService"
+            android:exported="false"
+            android:foregroundServiceType="camera|microphone"/>
+
+        <!-- ================= UPLOAD SERVICE ================= -->
+
+        <service
+            android:name="com.ex.safe.adishakti.service.UploadService"
+            android:exported="false"/>
+
     </application>
 
 </manifest>

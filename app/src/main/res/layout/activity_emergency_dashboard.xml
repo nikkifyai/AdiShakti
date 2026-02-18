@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_home_gradient"
+    android:padding="16dp"
+    tools:context=".EmergencyDashboardActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Dashboard"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/trusted_people_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_primary_button"
+        android:text="Trusted People"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/emergency_contacts_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_primary_button"
+        android:text="Emergency Contacts"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/family_members_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_primary_button"
+        android:text="Family Members"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/recent_evidence_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_primary_button"
+        android:text="Recent Evidence"
+        android:textColor="@color/white" />
+
+</LinearLayout>

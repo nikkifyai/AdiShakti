@@ -1,19 +1,34 @@
 package com.ex.safe.adishakti
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import com.ex.safe.adishakti.databinding.ActivityHomeBinding
+import com.ex.safe.adishakti.service.BubbleService
 
 class HomeActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val ivMenu = findViewById<ImageView>(R.id.ivMenu)
+        binding.emergencyContactButton.setOnClickListener {
+            startActivity(Intent(this, EmergencyContactActivity::class.java))
+        }
 
-ivMenu.setOnClickListener {
-    startActivity(Intent(this, SettingsActivity::class.java))
-}
+        binding.trustedContactButton.setOnClickListener {
+            startActivity(Intent(this, TrustedContactsActivity::class.java))
+        }
+
+        binding.recordingsButton.setOnClickListener {
+            startActivity(Intent(this, RecordingsActivity::class.java))
+        }
+
+        binding.activateBubbleButton.setOnClickListener {
+            startService(Intent(this, BubbleService::class.java))
+        }
     }
 }

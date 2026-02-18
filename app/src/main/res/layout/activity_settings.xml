@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5">
@@ -11,13 +10,14 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Close Button -->
         <ImageView
             android:id="@+id/ivClose"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@android:drawable/ic_menu_close_clear_cancel"
-            android:contentDescription="@string/close_button_desc"
-            android:layout_gravity="end"/>
+            android:layout_gravity="end"
+            android:contentDescription="Close"/>
 
         <!-- Profile Card -->
         <LinearLayout
@@ -33,7 +33,7 @@
                 android:layout_height="60dp"
                 android:background="@drawable/bg_profile_circle"
                 android:gravity="center"
-                android:text="@string/profile_initial"
+                android:text="A"
                 android:textColor="@android:color/white"
                 android:textSize="24sp"/>
 
@@ -46,14 +46,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile_name"
+                    android:text="Adi User"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile_phone"
+                    android:text="+91 XXXXX XXXXX"
                     android:textSize="14sp"/>
             </LinearLayout>
         </LinearLayout>
@@ -64,6 +64,31 @@
             android:layout_height="wrap_content"
             android:columnCount="3">
 
+            <!-- Emergency Contact Card -->
+            <LinearLayout
+                android:id="@+id/cardEmergencyContact"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_card">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_menu_call"
+                    android:contentDescription="Emergency Contact"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency Contact"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <!-- SOS History -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -76,16 +101,16 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:contentDescription="@string/sos_history_icon_desc"
                     android:src="@android:drawable/ic_menu_recent_history"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sos_history"
+                    android:text="SOS History"
                     android:layout_marginTop="8dp"/>
             </LinearLayout>
 
+            <!-- Help -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -98,189 +123,12 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:contentDescription="@string/friends_icon_desc"
-                    android:src="@android:drawable/ic_menu_myplaces"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/friends"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/bg_card">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/legal_icon_desc"
-                    android:src="@android:drawable/ic_menu_agenda"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/legal"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/bg_card">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/feedback_icon_desc"
-                    android:src="@android:drawable/ic_menu_edit"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/feedback"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/bg_card">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/help_icon_desc"
                     android:src="@android:drawable/ic_menu_help"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/help"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/bg_card">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/helpline_icon_desc"
-                    android:src="@android:drawable/ic_menu_call"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/helpline"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/bg_card">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/settings_icon_desc"
-                    android:src="@android:drawable/ic_menu_preferences"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/settings"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/bg_card">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/share_app_icon_desc"
-                    android:src="@android:drawable/ic_menu_share"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/share_app"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/bg_card">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/help_tour_icon_desc"
-                    android:src="@android:drawable/ic_menu_compass"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/help_tour"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/bg_card">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/log_out_icon_desc"
-                    android:src="@android:drawable/ic_menu_send"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/log_out"
+                    android:text="Help"
                     android:layout_marginTop="8dp"/>
             </LinearLayout>
 

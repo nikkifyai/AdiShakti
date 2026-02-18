@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Emergency Features">
+
+        <SwitchPreferenceCompat
+            android:key="hardware_trigger"
+            android:title="Emergency Hardware Trigger"
+            android:summary="Press Volume Up + Volume Down together"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
