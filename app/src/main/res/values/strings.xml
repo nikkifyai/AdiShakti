@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- ====================== -->
+    <!-- App -->
+    <!-- ====================== -->
+
     <string name="app_name">AdiShakti</string>
+
+
+    <!-- ====================== -->
+    <!-- Onboarding -->
+    <!-- ====================== -->
+
     <string name="next">Next</string>
     <string name="skip">Skip</string>
+
+
+    <!-- ====================== -->
+    <!-- Home Screen -->
+    <!-- ====================== -->
 
     <string name="home_heading">Your Safety Bubble Starts Here</string>
     <string name="home_description">
@@ -12,10 +27,17 @@
     <string name="create_bubble">Create Bubble</string>
     <string name="home_image_desc">Safety illustration</string>
 
-    <!-- Settings Page -->
+
+    <!-- ====================== -->
+    <!-- Settings Screen -->
+    <!-- ====================== -->
+
+    <!-- Profile Info -->
     <string name="profile_initial">N</string>
     <string name="profile_name">Nikki</string>
     <string name="profile_phone">+91 94584 73412</string>
+
+    <!-- Menu Items -->
     <string name="sos_history">SOS History</string>
     <string name="friends">Friends</string>
     <string name="legal">Legal</string>
@@ -26,6 +48,8 @@
     <string name="share_app">Share App</string>
     <string name="help_tour">Help Tour</string>
     <string name="log_out">Log Out</string>
+
+    <!-- Accessibility / Content Descriptions -->
     <string name="close_button_desc">Close</string>
     <string name="sos_history_icon_desc">SOS History Icon</string>
     <string name="friends_icon_desc">Friends Icon</string>
@@ -37,5 +61,34 @@
     <string name="share_app_icon_desc">Share App Icon</string>
     <string name="help_tour_icon_desc">Help Tour Icon</string>
     <string name="log_out_icon_desc">Log Out Icon</string>
+
+
+    <!-- ====================== -->
+    <!-- Authentication -->
+    <!-- ====================== -->
+
+    <!-- Login -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_continue">Login to continue</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register_prompt">Don\'t have an account? Register</string>
+
+    <!-- ====================== -->
+    <!-- Register Screen -->
+    <!-- ====================== -->
+
+    <string name="create_account">Create Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="login_prompt">Already have an account? Login</string>
+
 
 </resources>

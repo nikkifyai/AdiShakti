@@ -6,8 +6,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.ex.safe.adishakti.HomeActivity
 import com.ex.safe.adishakti.R
+import com.ex.safe.adishakti.ui.auth.LoginActivity
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -20,48 +20,37 @@ class OnboardingActivity : AppCompatActivity() {
         val tvSkip = findViewById<TextView>(R.id.tvSkip)
 
         val onboardingItems = listOf(
-
-            OnboardingItem(
-                R.drawable.illustrationbg,
+            OnboardingItem(R.drawable.illustrationbg,
                 "Real-Time Location",
-                "Share your live location with trusted people instantly."
-            ),
-
-            OnboardingItem(
-                R.drawable.illustrationbg,
+                "Share your live location with trusted people instantly."),
+            OnboardingItem(R.drawable.illustrationbg,
                 "Emergency SOS",
-                "Send instant alerts with your location to your family."
-            ),
-
-            OnboardingItem(
-                R.drawable.illustrationbg,
+                "Send instant alerts with your location to your family."),
+            OnboardingItem(R.drawable.illustrationbg,
                 "Stay Protected",
-                "Create your safety bubble and feel secure everywhere."
-            )
+                "Create your safety bubble and feel secure everywhere.")
         )
 
         viewPager.adapter = OnboardingAdapter(onboardingItems)
 
-        btnNext.setOnClickListener {
+        fun finishOnboarding() {
+            val prefs = getSharedPreferences("onboarding_prefs", MODE_PRIVATE)
+            prefs.edit().putBoolean("isFirstTime", false).apply()
 
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
+        btnNext.setOnClickListener {
             if (viewPager.currentItem < onboardingItems.size - 1) {
                 viewPager.currentItem += 1
             } else {
-
-                val prefs = getSharedPreferences("onboarding_prefs", MODE_PRIVATE)
-                prefs.edit().putBoolean("isFirstTime", false).apply()
-
-                startActivity(Intent(this, HomeActivity::class.java))
-                finish()
+                finishOnboarding()
             }
         }
 
         tvSkip.setOnClickListener {
-            val prefs = getSharedPreferences("onboarding_prefs", MODE_PRIVATE)
-            prefs.edit().putBoolean("isFirstTime", false).apply()
-
-            startActivity(Intent(this, HomeActivity::class.java))
-            finish()
+            finishOnboarding()
         }
     }
 }
